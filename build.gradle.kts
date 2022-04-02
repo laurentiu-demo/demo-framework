@@ -27,6 +27,13 @@ dependencies {
     // Junit Parameterized
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
 
+    // Junit for Cucumber Runner
+    testImplementation("org.junit.vintage:junit-vintage-engine:5.8.2")
+
+    // Cucumber
+    testImplementation("io.cucumber:cucumber-java:7.2.3")
+    testImplementation("io.cucumber:cucumber-junit:7.2.3")
+
 
 
 }
