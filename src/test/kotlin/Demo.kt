@@ -25,7 +25,7 @@ class Demo {
 
         // Exercise
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/")
-        val title: String = driver.getTitle()
+        val title: String = driver.title
 
         // Verify
         assertThat(title).contains("Selenium WebDriver")
