@@ -24,6 +24,5 @@ class LogInSteps {
     @Then("I check that I am on home page")
     fun i_check_that_i_am_on_home_page() {
         // Write code here that turns the phrase above into concrete actions
-        println("yolo")
     }
 }
