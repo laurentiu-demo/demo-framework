@@ -14,6 +14,9 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+
+    // Assertion dependency
+    testImplementation("org.assertj:assertj-core:3.22.0")
 }
 
 tasks.test {
