@@ -1,5 +1,6 @@
 package pages
 
+import utils.Elements
 import utils.Settings
 
 class HomePage(basePage: BasePage) : BasePage() {
@@ -12,6 +13,10 @@ class HomePage(basePage: BasePage) : BasePage() {
 
     fun goToHomePage() {
         basePage.driver.get(Settings.baseUrl)
-        println(basePage.driver.title)
+    }
+
+    fun clickOnSignIn() {
+       val signInElement = basePage.driver.findElement(Elements.login)
+        signInElement.click()
     }
 }

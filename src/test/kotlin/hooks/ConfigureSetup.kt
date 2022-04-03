@@ -5,10 +5,9 @@ import utils.Settings
 
 object ConfigureSetup {
     fun initializeSettings() {
-        val environment = Environment()
-        Settings.baseUrl = environment.getEnvironmentValues("baseUrl")
-        Settings.username = environment.getEnvironmentValues("username")
-        Settings.password = environment.getEnvironmentValues("password")
+        Settings.baseUrl = Environment("baseUrl")
+        Settings.username = Environment("username")
+        Settings.password = Environment("password")
         println("Settings configuration complete")
     }
 }

@@ -2,7 +2,7 @@ package environment
 
 import java.util.*
 
-class Environment {
+object Environment {
 
     private val environmentConfiguration = System.getProperty("environmentConfiguration") ?: "qa"
     private val props = javaClass.classLoader.getResourceAsStream("environments/$environmentConfiguration.properties").use {
@@ -10,8 +10,6 @@ class Environment {
         Properties().apply { load(it) }
     }
 
-    fun getEnvironmentValues(key: String): String {
-        return props.getProperty(key) ?: error("Could not find property $key")
-    }
+    operator fun invoke(key: String) = props.getProperty(key) ?: error("Could not find property $key")
 
 }

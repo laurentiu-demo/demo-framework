@@ -5,7 +5,7 @@ Feature: Log In
     Given I am on the home page
     Then I go to Log In Page
     And I insert the "<Username>" and "<Password>"
-    Then I check that I am on home page
+    Then I check that I am on my account page
 
     Examples:
       | Username | Password |
