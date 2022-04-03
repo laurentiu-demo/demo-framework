@@ -6,3 +6,7 @@ import io.cucumber.java.ParameterType
 fun category(category: String): String {
     return category
 }
+@ParameterType("Blouses|T-shirts|Evening Dresses")
+fun subcategory(subcategory: String): String {
+    return subcategory
+}

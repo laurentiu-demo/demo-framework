@@ -37,4 +37,9 @@ class SearchItemsSteps(basePage: BasePage) : BasePage() {
     fun iGoToCategory(category: String) {
       homePage.search.chooseCategory(category)
     }
+
+    @And("I choose the subcategory {subcategory}")
+    fun iChooseSubcategory(subcategory: String) {
+        homePage.search.chooseSubcategory(subcategory)
+    }
 }

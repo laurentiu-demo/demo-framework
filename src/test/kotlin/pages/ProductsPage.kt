@@ -14,10 +14,12 @@ class ProductsPage(basePage: BasePage) {
     fun addToCart() {
         switchToListView()
         val productList = basePage.driver.findElements(Elements.productList)
-        val random = Random.nextInt(0,productList.size)
-        basePage.driver.findElement(Elements.addToCart(random)).click()
-        Thread.sleep(5000)
-
+        val random = if (productList.size >1) Random.nextInt(1, productList.size) else 1
+        if (random != 1) {
+            basePage.driver.findElement(Elements.addToCart(random)).click()
+        } else {
+            basePage.driver.findElement(Elements.addToCart).click()
+        }
     }
 
     fun continueShopping() {

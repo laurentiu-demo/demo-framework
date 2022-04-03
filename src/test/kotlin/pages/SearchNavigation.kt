@@ -1,6 +1,7 @@
 package pages
 
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.interactions.Actions
 import utils.Elements
 
 class SearchNavigation(private val driver: WebDriver) {
@@ -11,7 +12,13 @@ class SearchNavigation(private val driver: WebDriver) {
     }
 
     fun chooseCategory(category: String) {
-       driver.findElement(Elements.category(category)).click()
+        val categoryElement = driver.findElement(Elements.category(category))
+        val actions = Actions(driver)
+        actions.moveToElement(categoryElement).perform()
+    }
+
+    fun chooseSubcategory(subcategory: String) {
+        driver.findElement(Elements.subcategory(subcategory)).click()
         Thread.sleep(3000)
     }
 
