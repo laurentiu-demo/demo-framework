@@ -33,6 +33,8 @@ dependencies {
     // Cucumber
     testImplementation("io.cucumber:cucumber-java:7.2.3")
     testImplementation("io.cucumber:cucumber-junit:7.2.3")
+    // Cucumber dependency injection through constructor
+    testImplementation("io.cucumber:cucumber-picocontainer:7.2.3")
 
 
 

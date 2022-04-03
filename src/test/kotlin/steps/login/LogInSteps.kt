@@ -2,13 +2,23 @@ package steps.login
 
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
+import pages.BasePage
+import pages.HomePage
 
 
-class LogInSteps {
+class LogInSteps(basePage: BasePage) : BasePage() {
 
-    @Given("I am on the main page")
-    fun i_am_on_the_main_page() {
-        // Write code here that turns the phrase above into concrete actions
+    private val basePage: BasePage
+    init {
+        this.basePage = basePage
+    }
+
+    private val homePage = HomePage(basePage)
+
+
+    @Given("I am on the home page")
+    fun i_am_on_the_home_page() {
+    homePage.goToHomePage()
     }
 
     @Then("I go to Log In Page")
