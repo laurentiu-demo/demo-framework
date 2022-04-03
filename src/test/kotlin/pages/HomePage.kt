@@ -6,6 +6,7 @@ import utils.Settings
 class HomePage(basePage: BasePage) : BasePage() {
 
     private val basePage: BasePage
+    val search = SearchNavigation(basePage.driver)
 
     init {
         this.basePage = basePage
@@ -16,7 +17,7 @@ class HomePage(basePage: BasePage) : BasePage() {
     }
 
     fun clickOnSignIn() {
-       val signInElement = basePage.driver.findElement(Elements.login)
+        val signInElement = basePage.driver.findElement(Elements.login)
         signInElement.click()
     }
 }

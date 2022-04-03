@@ -1,4 +1,4 @@
-package steps.login
+package steps
 
 import environment.Environment
 import io.cucumber.java.en.Given
