@@ -12,7 +12,7 @@ import org.junit.platform.suite.api.Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource(value = "features")
 @ConfigurationParameters(
-    ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "steps, hooks"),
+    ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "steps, hooks, utils"),
     ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
 )
 class TestRunner

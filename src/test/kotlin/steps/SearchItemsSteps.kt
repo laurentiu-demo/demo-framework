@@ -1,5 +1,6 @@
 package steps
 
+import io.cucumber.java.en.And
 import io.cucumber.java.en.Then
 import pages.BasePage
 import pages.HomePage
@@ -30,5 +31,10 @@ class SearchItemsSteps(basePage: BasePage) : BasePage() {
     @Then("I continue shopping")
     fun i_continue_shopping() {
         productsPage.continueShopping()
+    }
+
+    @And("I go to category {category}")
+    fun iGoToCategory(category: String) {
+      homePage.search.chooseCategory(category)
     }
 }

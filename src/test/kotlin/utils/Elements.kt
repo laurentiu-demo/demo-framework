@@ -17,7 +17,7 @@ object Elements {
     // Search Navigation
     val search: By = By.id("search_query_top")
     val submitSearch: By = By.cssSelector("[name='submit_search']")
-    fun category(categoryTitle: String): By = By.cssSelector(".sf-with-ul[title='${categoryTitle.lowercase()}']")
+    fun category(categoryTitle: String): By = By.cssSelector(".sf-with-ul[title='${categoryTitle}']")
 
     // Product Page
     val listView: By = By.id("list")
