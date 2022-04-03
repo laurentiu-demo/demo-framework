@@ -27,19 +27,26 @@ dependencies {
 
     // Junit Parameterized
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
+    testImplementation("org.junit.platform:junit-platform-suite-api:1.8.2")
 
     // Junit for Cucumber Runner
-    testImplementation("org.junit.vintage:junit-vintage-engine:5.8.2")
+  //  testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.8.2")
 
     // Cucumber
-    testImplementation("io.cucumber:cucumber-java:7.2.3")
-    testImplementation("io.cucumber:cucumber-junit:7.2.3")
+    testImplementation(platform("io.cucumber:cucumber-bom:7.2.3"))
+    testImplementation("io.cucumber:cucumber-java")
+    testImplementation("io.cucumber:cucumber-junit-platform-engine")
+    testImplementation("org.junit.platform:junit-platform-suite")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+
     // Cucumber dependency injection through constructor
     testImplementation("io.cucumber:cucumber-picocontainer:7.2.3")
 }
 
 tasks.test {
+    systemProperty("browser", System.getProperty("browser"))
     useJUnitPlatform()
+    systemProperty("cucumber.junit-platform.naming-strategy", "long")
 }
 
 tasks.withType<KotlinCompile> {

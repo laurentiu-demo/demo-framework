@@ -1,10 +1,18 @@
 package runner
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import io.cucumber.core.options.Constants.GLUE_PROPERTY_NAME
+import io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME
+import org.junit.platform.suite.api.ConfigurationParameter
+import org.junit.platform.suite.api.ConfigurationParameters
+import org.junit.platform.suite.api.IncludeEngines
+import org.junit.platform.suite.api.SelectClasspathResource
+import org.junit.platform.suite.api.Suite
 
-@RunWith(Cucumber::class)
-@CucumberOptions(features = ["src/test/resources/features"], glue = ["steps"])
-class TestRunner {
-}
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource(value = "features")
+@ConfigurationParameters(
+    ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "steps, hooks"),
+    ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
+)
+class TestRunner
