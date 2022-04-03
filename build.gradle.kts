@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.6.10"
     application
+    id ("se.thinkcode.cucumber-runner") version "0.0.8"
 }
 
 group = "me.laure"
@@ -35,9 +36,6 @@ dependencies {
     testImplementation("io.cucumber:cucumber-junit:7.2.3")
     // Cucumber dependency injection through constructor
     testImplementation("io.cucumber:cucumber-picocontainer:7.2.3")
-
-
-
 }
 
 tasks.test {
