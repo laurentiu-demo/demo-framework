@@ -23,4 +23,5 @@ object Elements {
     val listView: By = By.id("list")
     fun addToCart(index: Int) : By = By.cssSelector(".button[data-id-product='$index'] > span")
     val productList: By = By.cssSelector(".product_list > li")
+    val continueShopping: By = By.cssSelector(".continue")
 }

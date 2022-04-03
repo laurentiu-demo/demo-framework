@@ -26,4 +26,9 @@ class SearchItemsSteps(basePage: BasePage) : BasePage() {
     fun i_search_for_hoodie() {
         productsPage.addToCart()
     }
+
+    @Then("I continue shopping")
+    fun i_continue_shopping() {
+        productsPage.continueShopping()
+    }
 }
