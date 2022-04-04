@@ -22,6 +22,11 @@ class CheckoutSteps(basePage: BasePage) {
         productsPage.goToCheckOut()
     }
 
+    @Then("I click proceed to checkout")
+    fun iClickProceedToCheckout() {
+        productsPage.goToCheckOut()
+    }
+
     @And("I remove the item")
     fun iRemoveTheItem() {
         checkoutPage.removeItem()
