@@ -26,6 +26,10 @@ class ProductsPage(basePage: BasePage) {
         basePage.driver.findElement(Elements.continueShopping).click()
     }
 
+    fun goToCheckOut() {
+        basePage.driver.findElement(Elements.checkout)
+    }
+
     private fun switchToListView() {
         basePage.driver.findElement(Elements.listView).click()
     }
