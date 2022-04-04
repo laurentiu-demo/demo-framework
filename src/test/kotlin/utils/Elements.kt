@@ -28,4 +28,9 @@ object Elements {
     val productList: By = By.cssSelector(".product_list > li")
     val continueShopping: By = By.cssSelector(".continue")
     val checkout: By = By.xpath("//span[contains(.,'Proceed to checkout')]")
+
+    // CheckoutPage
+    val increaseItemsInCart: By = By.xpath("//a[contains(@class, 'cart_quantity_up') and @title='Add']")
+    val subtractItemsInCart: By = By.xpath("//a[contains(@class, 'cart_quantity_down') and @title='Substract']")
+    val removeItemFromCart: By = By.xpath("//a[@title='Delete']")
 }
