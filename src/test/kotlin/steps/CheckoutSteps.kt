@@ -22,14 +22,26 @@ class CheckoutSteps(basePage: BasePage) {
         productsPage.goToCheckOut()
     }
 
-    @Then("I click proceed to checkout")
-    fun iClickProceedToCheckout() {
-        productsPage.goToCheckOut()
+    @Then("I click proceed to checkout from {}")
+    fun iClickProceedToCheckout(string: String) {
+        checkoutPage.proceedToCheckOut(string)
+    }
+
+    @Then("I agree to terms of service")
+    fun iAgreeToTermsOfService() {
+        checkoutPage.agreeToTermsOfService()
+    }
+
+    @Then("I choose the payment via {payment}")
+    fun iAgreeToTermsOfService(payment: String) {
+        when(payment) {
+            "bank wire" -> checkoutPage.payViaBankWire()
+            "pay by check" -> checkoutPage.payViaCheck()
+        }
     }
 
     @And("I remove the item")
     fun iRemoveTheItem() {
         checkoutPage.removeItem()
-        Thread.sleep(3000)
     }
 }

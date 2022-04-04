@@ -19,7 +19,6 @@ class SearchNavigation(private val driver: WebDriver) {
 
     fun chooseSubcategory(subcategory: String) {
         driver.findElement(Elements.subcategory(subcategory)).click()
-        Thread.sleep(3000)
     }
 
 }

@@ -28,9 +28,14 @@ object Elements {
     val productList: By = By.cssSelector(".product_list > li")
     val continueShopping: By = By.cssSelector(".continue")
     val checkout: By = By.xpath("//a[@title='Proceed to checkout']")
+    val proceedCheckout: By = By.xpath("//span[.='Proceed to checkout']")
+    val proceedCheckoutShipping: By = By.xpath("//button[@name='processCarrier']/span[contains(.,'Proceed to checkout')]")
 
     // CheckoutPage
     val increaseItemsInCart: By = By.xpath("//a[contains(@class, 'cart_quantity_up') and @title='Add']")
     val subtractItemsInCart: By = By.xpath("//a[contains(@class, 'cart_quantity_down') and @title='Substract']")
     val removeItemFromCart: By = By.xpath("//a[@title='Delete']")
+    val termsOfService: By = By.id("cgv")
+    val bankWire: By = By.cssSelector(".bankwire")
+    val cheque: By = By.cssSelector("..cheque")
 }
