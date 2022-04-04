@@ -5,6 +5,7 @@ import org.openqa.selenium.By
 object Elements {
     // Home Page
     val login: By = By.cssSelector(".login")
+    val homeProductList: By = By.cssSelector(".homefeatured > li")
 
     // Log In Page
     val username: By = By.id("email")

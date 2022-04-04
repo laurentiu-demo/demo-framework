@@ -43,4 +43,9 @@ class LogInSteps(basePage: BasePage) : BasePage() {
     fun iCheckThatIAmOnMyAccountPage() {
         myAccountPage.checkIamOnMyAccountPage()
     }
+
+    @Then("I add the first item to the cart")
+    fun iAddTheFirstItemToCart() {
+        homePage.addItemToCart()
+    }
 }
