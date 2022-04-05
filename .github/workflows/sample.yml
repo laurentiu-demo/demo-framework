@@ -43,7 +43,7 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Test with Gradle
-        if: env.BROWSER == 'ChromeDriver' || env.Browser == 'FireFoxDriver'
+        if: ${{env.BROWSER}} == 'ChromeDriver' || ${{env.BROWSER}} == 'FireFoxDriver'
         run: ./gradlew cucumber -Dbrowser=${{env.BROWSER}} -DenvironmentConfiguration=${{env.ENVIRONMENT}}
       - name: Test with Gradle default env
         run: ./gradlew cucumber
