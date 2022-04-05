@@ -44,7 +44,7 @@ dependencies {
 }
 
 tasks.test {
-    systemProperty("browser", System.getProperty("browser"))
+    systemProperties = System.getProperties().map { property -> property.key.toString() to property.value.toString() }.toMap()
     useJUnitPlatform()
     systemProperty("cucumber.junit-platform.naming-strategy", "long")
 }

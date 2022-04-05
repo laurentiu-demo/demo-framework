@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Environment Print and Browser
+      - name: Environment and Browser configuration
         run: echo "The ENVIRONMENT is $environmentConfiguration && browser is $browser"
       - uses: actions/checkout@v3
       - name: Set up JDK 11
