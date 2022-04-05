@@ -42,4 +42,4 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Test with Gradle
-        run: ./gradlew cucumber -Dbrowser=$BROWSER
+        run: ./gradlew cucumber -Dbrowser=${{env.BROWSER}}
