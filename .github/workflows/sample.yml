@@ -8,9 +8,9 @@ on:
     branches: [ master ]
   workflow_dispatch:
     inputs:
-      environment:
+      environmentConfiguration:
         description: 'Environment to run tests against'
-        type: environment
+        type: choice
         required: false
         default: 'qa'
         options:
