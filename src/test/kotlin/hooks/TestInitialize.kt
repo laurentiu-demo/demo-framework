@@ -1,13 +1,15 @@
 package hooks
 
-import pages.BasePage
 import io.cucumber.java.After
 import io.cucumber.java.Before
 import io.github.bonigarcia.wdm.WebDriverManager
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
+import pages.BasePage
 import java.time.Duration
+
 
 class TestInitialize(basePage: BasePage) {
 
@@ -22,7 +24,9 @@ class TestInitialize(basePage: BasePage) {
         ConfigureSetup.initializeSettings()
         val browser = System.getProperty("browser") ?: "ChromeDriver"
         val browserInstance = getBrowserClass(browser)
-        basePage.driver = WebDriverManager.getInstance(browserInstance).create()
+        val options = ChromeOptions()
+        options.addArguments("--headless")
+        basePage.driver = WebDriverManager.getInstance(browserInstance).capabilities(options).create()
         basePage.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30))
         basePage.driver.manage().window().maximize()
     }
