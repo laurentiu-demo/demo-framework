@@ -16,7 +16,8 @@ on:
         options:
           - qa
           - dev
-
+env:
+  environmentConfiguration: github.event.inputs.environmentConfiguration
 
 jobs:
   build:
