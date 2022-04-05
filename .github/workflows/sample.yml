@@ -25,6 +25,9 @@ on:
           - 'ChromeDriver'
           - 'FireFoxDriver'
 
+env:
+  browser: ${{ github.event.inputs.browserSetup }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,9 +35,6 @@ jobs:
     steps:
       - name: Environment and Browser configuration
         run: echo "The ENVIRONMENT is ${{ github.event.inputs.environment }} && browser is ${{ github.event.inputs.browserSetup }}"
-      - name: Saving environment variables
-        run: echo "{environmentConfiguration}={${{ github.event.inputs.environment }}}" >> $GITHUB_ENV 
-             echo "{browser}={${{ github.event.inputs.browserSetup }}}" >> $GITHUB_ENV
       - uses: actions/checkout@v3
       - name: Set up JDK 11
         uses: actions/setup-java@v3
@@ -42,4 +42,4 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Test with Gradle
-        run: ./gradlew cucumber -Dbrowser=${{ env.browser }}
+        run: ./gradlew cucumber -Dbrowser=$browser
