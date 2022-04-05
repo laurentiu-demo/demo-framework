@@ -25,11 +25,6 @@ on:
           - 'ChromeDriver'
           - 'FireFoxDriver'
 
-env:
-  environmentConfiguration: ${{ github.event.inputs.environment }}
-  browser: ${{ github.event.inputs.browserSetup }}
-
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -44,4 +39,4 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Test with Gradle
-        run: ./gradlew cucumber -Dbrowser=$browser -DenvironmentConfiguration=$environmentConfiguration
+        run: ./gradlew cucumber -Dbrowser=${{ github.event.inputs.browserSetup }} -DenvironmentConfiguration=${{ github.event.inputs.environment }}
