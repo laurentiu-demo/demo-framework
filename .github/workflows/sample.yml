@@ -9,15 +9,25 @@ on:
   workflow_dispatch:
     inputs:
       environmentConfiguration:
-        description: 'Environment to run tests against(ex: qa, dev)'
-        type: environment
+        description: 'Environment to run tests against'
+        type: choice
         required: false
         default: 'qa'
+        options:
+          - 'qa'
+          - 'dev'
       browser:
-        description: 'The browser to run on(ex: ChromeDriver, FireFoxDriver'
-        type: environment
+        description: 'The browser to run on'
+        type: choice
         required: false
         default: 'ChromeDriver'
+        options:
+          - 'ChromeDriver'
+          - 'FireFoxDriver'
+
+env:
+  environmentConfiguration: ${{ github.event.inputs.environmentConfiguration }}
+  browser: ${{ github.event.inputs.browser }}
 
 
 jobs:
