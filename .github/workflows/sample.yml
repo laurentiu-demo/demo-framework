@@ -44,4 +44,4 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Test with Gradle
-        run: ./gradlew test -Dbrowser=$browser -DenvironmentConfiguration=$environmentConfiguration
+        run: ./gradlew cucumber -Dbrowser=$browser -DenvironmentConfiguration=$environmentConfiguration
