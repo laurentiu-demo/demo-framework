@@ -24,8 +24,7 @@ class TestInitialize(basePage: BasePage) {
     @Before
     fun setup() {
         ConfigureSetup.initializeSettings()
-        var browser = System.getProperty("browser") ?: "ChromeDriver"
-        if (browser.isEmpty()) browser = "ChromeDriver"
+        val browser = System.getProperty("browser") ?: "ChromeDriver"
         val browserInstance = getBrowserClass(browser)
         val options = getBrowserOptions(browser)
         basePage.driver = WebDriverManager.getInstance(browserInstance).capabilities(options).create()
@@ -38,7 +37,7 @@ class TestInitialize(basePage: BasePage) {
                 val options = FirefoxOptions()
                 options.addArguments("--headless")
                 options.addArguments("start-maximized")
-                options.addArguments("--window-size=1024,768")
+                options.addArguments("--window-size=1920,1080")
                 options
             }
             "ChromeDriver" -> {
