@@ -38,6 +38,7 @@ class TestInitialize(basePage: BasePage) {
                 val options = FirefoxOptions()
                 options.addArguments("--headless")
                 options.addArguments("start-maximized")
+                options.addArguments("--window-size=1024,768")
                 options
             }
             "ChromeDriver" -> {
