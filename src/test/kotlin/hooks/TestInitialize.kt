@@ -24,7 +24,8 @@ class TestInitialize(basePage: BasePage) {
     @Before
     fun setup() {
         ConfigureSetup.initializeSettings()
-        val browser = System.getProperty("browser") ?: "ChromeDriver"
+        var browser = System.getProperty("browser") ?: "ChromeDriver"
+        if (browser.isEmpty()) browser = "ChromeDriver"
         val browserInstance = getBrowserClass(browser)
         val options = getBrowserOptions(browser)
         basePage.driver = WebDriverManager.getInstance(browserInstance).capabilities(options).create()
