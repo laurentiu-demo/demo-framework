@@ -22,4 +22,3 @@ jobs:
           java-version: '11'
       - name: Test with Gradle
         run: ./gradlew cucumber
-      - name: Cucumber Report to Annotations
