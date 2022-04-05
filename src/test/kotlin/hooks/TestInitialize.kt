@@ -29,7 +29,6 @@ class TestInitialize(basePage: BasePage) {
         val options = getBrowserOptions(browser)
         basePage.driver = WebDriverManager.getInstance(browserInstance).capabilities(options).create()
         basePage.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30))
-        basePage.driver.manage().window().maximize()
     }
 
     private fun getBrowserOptions(driver: String): AbstractDriverOptions<*> {
@@ -37,15 +36,18 @@ class TestInitialize(basePage: BasePage) {
             "FireFoxDriver" -> {
                 val options = FirefoxOptions()
                 options.addArguments("--headless")
+                options.addArguments("start-maximized")
                 options
             }
             "ChromeDriver" -> {
                 val options = ChromeOptions()
                 options.addArguments("--headless")
+                options.addArguments("start-maximized")
                 options
             }
             else -> {val options = ChromeOptions()
                 options.addArguments("--headless")
+                options.addArguments("start-maximized")
                 options}
         }
     }
