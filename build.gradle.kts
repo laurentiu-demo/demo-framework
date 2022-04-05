@@ -4,6 +4,7 @@ plugins {
     kotlin("jvm") version "1.6.10"
     application
     id ("se.thinkcode.cucumber-runner") version "0.0.8"
+    kotlin("plugin.serialization") version "1.6.10"
 }
 
 group = "me.laure"
@@ -14,6 +15,8 @@ repositories {
 }
 
 dependencies {
+    val ktor_version = "1.6.8"
+
     testImplementation(kotlin("test"))
 
     // Assertion dependency
@@ -29,8 +32,14 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
     testImplementation("org.junit.platform:junit-platform-suite-api:1.8.2")
 
-    // Junit for Cucumber Runner
-  //  testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.8.2")
+    // Interaction with APIs, serialization & deserialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-json:$ktor_version")
+    implementation("io.ktor:ktor-client-logging:$ktor_version")
+    implementation("io.ktor:ktor-client-serialization:$ktor_version")
+
 
     // Cucumber
     testImplementation(platform("io.cucumber:cucumber-bom:7.2.3"))
