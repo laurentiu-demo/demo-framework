@@ -33,7 +33,7 @@ jobs:
       - name: Environment and Browser configuration
         run: echo "The ENVIRONMENT is ${{ github.event.inputs.environment }} && browser is ${{ github.event.inputs.browserSetup }}"
       - name: Saving environment variables
-        run: echo "environmentConfiguration}={${{ github.event.inputs.environment }}}" >> $GITHUB_ENV 
+        run: echo "{environmentConfiguration}={${{ github.event.inputs.environment }}}" >> $GITHUB_ENV 
              echo "{browser}={${{ github.event.inputs.browserSetup }}}" >> $GITHUB_ENV
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -42,4 +42,4 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Test with Gradle
-        run: ./gradlew cucumber
+        run: ./gradlew cucumber -Dbrowser=${{ env.browser }}
