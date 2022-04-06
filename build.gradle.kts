@@ -15,8 +15,6 @@ repositories {
 }
 
 dependencies {
-    val ktor_version = "1.6.8"
-
     testImplementation(kotlin("test"))
 
     // Assertion dependency
@@ -35,11 +33,9 @@ dependencies {
     // Interaction with APIs, serialization & deserialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-    implementation("io.ktor:ktor-client-core:$ktor_version")
-    implementation("io.ktor:ktor-client-json:$ktor_version")
-    implementation("io.ktor:ktor-client-logging:$ktor_version")
-    implementation("io.ktor:ktor-client-serialization:$ktor_version")
 
+    // Rest assured kotlin version to make requests
+    implementation("io.rest-assured:kotlin-extensions:5.0.0")
 
     // Cucumber
     testImplementation(platform("io.cucumber:cucumber-bom:7.2.3"))
