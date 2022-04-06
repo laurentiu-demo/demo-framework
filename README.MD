@@ -1,4 +1,4 @@
-## Guide
+## Guide [![CI](https://github.com/laurentiu-git/test-framework/actions/workflows/sample.yml/badge.svg)](https://github.com/laurentiu-git/test-framework/actions/workflows/sample.yml)
 For bugs tickets read Bugs.MD (even though I would not really call them bug tickets) and for the third exercise the response is in ThirdTest.MD
 
 There is also another branch that I planned on using a different dependency injection, but I have not configured it entirely, though there are some samples in it.
