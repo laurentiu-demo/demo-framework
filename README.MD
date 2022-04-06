@@ -1,8 +1,6 @@
 ## Guide [![CI](https://github.com/laurentiu-git/test-framework/actions/workflows/sample.yml/badge.svg)](https://github.com/laurentiu-git/test-framework/actions/workflows/sample.yml)
 For bugs tickets read Bugs.MD (even though I would not really call them bug tickets) and for the third exercise the response is in ThirdTest.MD.
 
-There is also another branch that I planned on using a different dependency injection, but I have not configured it entirely, though there are some samples in it.
-
 ## Setup
 Make sure that `JAVA_HOME` system environment variable is added, also install the Kotlin, Cucumber & Gerkin plugins (from Intellij), the tests from feature files might need extra configuration, but you can run the tests from the TestRunner file.
 
@@ -29,4 +27,5 @@ It was scheduled to run every 30 minutes, but I have removed it.
 
 
 
-PS: Ignore the variable names I have not refactored them also ignore the DEMO file.
+PS: Ignore the variable names I have not refactored them also ignore the Demo file.
+There is also another branch that I planned on using a different dependency injection, but I have not configured it entirely, though there are some samples in it.
