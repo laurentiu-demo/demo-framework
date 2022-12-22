@@ -15,7 +15,7 @@ import utils.Settings
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class PetTests {
-    private var baseUrl: String = ""
+    lateinit var baseUrl: String
 
     @BeforeAll
     fun setup() {
